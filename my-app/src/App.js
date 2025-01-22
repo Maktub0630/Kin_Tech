@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Counter from './Counter';
+import findLargestNumber from './findLargestNumber';
+import UserList from './UserList';
 
 function App() {
+  const numbers = [5, 12, 8, 130, 134];
+  const largest = findLargestNumber(numbers);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="section">
+        <h2>Counter Component</h2>
+        <Counter />
+      </div>
+
+      <div className="section">
+        <h2>Largest Number</h2>
+        <p>Numbers: {numbers.join(', ')}</p>
+        <p>Largest number is: {largest}</p>
+      </div>
+
+      <div className="section">
+        <h2>User List</h2>
+        <UserList />
+      </div>
     </div>
   );
 }
